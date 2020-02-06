@@ -1,0 +1,22 @@
+{
+  "name": "hextris",
+  "version": "1.0.0",
+  "description": "Hextris Game Engine",
+  "main": "hextris.js",
+  "scripts": {
+    "build": "rollup -c",
+    "demo": "npm run build && open ./demo.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^1.31.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.2.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "tslint": "^6.0.0",
+    "typescript": "^3.7.5"
+  }
+}

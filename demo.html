@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <script src="./hextris.js"></script>
+    <style>
+      #board {
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="board"></div>
+    <script>
+      const board = new Hextris.Board();
+      const game = new Hextris.Game([board]);
+
+      const el = document.getElementById('board');
+
+      function updateBoard() {
+        el.innerHTML = board.toString().replace(/\n/g, "<br/>").replace(/\s/g, "&nbsp;");
+      }
+      
+      window.addEventListener('keydown', (e) => {
+        switch (e.code) {
+          case 'KeyJ':
+            board.movePieceLeft();
+
+            break;
+          case 'KeyK':
+            board.movePieceRight();
+
+            break;
+          case 'KeyL':
+            board.rotatePieceRight();
+
+            break;
+          case 'Space':
+          default:
+            board.next();
+
+            break;
+        }
+
+        updateBoard();
+      });
+
+      game.onTick(() => {
+        updateBoard();
+      });
+
+      game.start();
+    </script>
+  </body>
+</html>
